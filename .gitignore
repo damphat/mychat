@@ -8,3 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+venv/
+ENV/
+
+# Project Data
+data/
+.env
+.DS_Store
+.coverage
+.pytest_cache/
