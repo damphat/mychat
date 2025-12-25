@@ -32,7 +32,7 @@ def save_config(config: Config):
 
 def load_session(session_id: str) -> Session:
     _ensure_dirs()
-    session_file = SESSIONS_DIR / f"chat:{session_id}.json"
+    session_file = SESSIONS_DIR / f"chat-{session_id}.json"
     
     if not session_file.exists():
         # Raise error or return new? 
@@ -51,7 +51,7 @@ def load_session(session_id: str) -> Session:
 
 def save_session(session: Session):
     _ensure_dirs()
-    session_file = SESSIONS_DIR / f"chat:{session.id}.json"
+    session_file = SESSIONS_DIR / f"chat-{session.id}.json"
     with open(session_file, "w", encoding="utf-8") as f:
         f.write(session.model_dump_json(indent=2))
 

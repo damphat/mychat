@@ -12,7 +12,7 @@
 - Thư mục làm việc: `data/`.
 - **Config:** `data/config.json`. Nếu chưa có, tự động tạo mặc định:
   `{"system": "You are a helpful assistant.", "last_session_id": null}`.
-- **Sessions:** Lưu tại `data/sessions/chat:<uuid>.json`.
+- **Sessions:** Lưu tại `data/sessions/chat-<uuid>.json`.
 - **Loading:** Luôn load JSON vào `dataclass` tương ứng trước khi xử lý để đảm bảo type-safe và default values.
 
 ## 4. Workflow
