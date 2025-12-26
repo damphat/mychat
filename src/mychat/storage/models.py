@@ -1,15 +1,18 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import List, Optional, Literal
 import uuid
 from datetime import datetime
+
 
 class Config(BaseModel):
     system: str = "You are a helpful assistant."
     last_session_id: Optional[str] = None
 
+
 class Message(BaseModel):
-    role: str
+    role: Literal["system", "user", "assistant", "tool"]
     content: str
+
 
 class Session(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
